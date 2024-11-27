@@ -69,10 +69,28 @@ video {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Sección de mercado */
+#home {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+#education {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
 #market {
     text-align: center;
     padding: 2rem 0;
     background-color: #f9f9f9;
 }
+
+#contact {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
 

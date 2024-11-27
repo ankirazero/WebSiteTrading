@@ -1,6 +1,18 @@
 # WebSiteTrading
+descripción de proyecto 
+
 sitio en donde se hablará sobre trading y se posteará información correspondiente al apasionante mundi de mercados financieros
 
+características implementadas
+
+en el proyecto se inicia a implementar el marqueteo de la pagina web por medio de htmlo en el index, donde se colocan cuatro secciones las cuales son las siguientes: 
+
+    Inicio
+    Mercado
+    Educación
+    Contacto
+
+adicional a ello, se inician a trabajr con media queries para el responsive y se incluyen imágenes en la pagina web para la sección de Mercado y un videoen la sección de Educación  en donde se mostrará definiciones básicas de los diferentes mercados que se pueden encontrar a travez de su recorrido en el trading 
 pasos seguidos 
 
 1. Creación repositorio github
