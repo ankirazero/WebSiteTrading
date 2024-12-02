@@ -42,11 +42,11 @@ pasos seguidos
 
 TRABAJO 2 
 
-adicion nueva rama para cambios nodejs y express
+1. adicion nueva rama para cambios nodejs y express
 
 ![alt text](imagenes/add-new-branch.png)
 
-inicializar nodejs 
+2. inicializar nodejs 
 
 npm init -y
 
@@ -54,10 +54,25 @@ instalar express
 
 npm install express
 
-cambios para adicion de sevidor nodejs y express 
+![alt text](imagenes/nodejs-express.png)
+
+3. cambios para adicion de sevidor nodejs y express 
 
 ![alt text](imagenes/changes-nosejs-express.png)
+![alt text](imagenes/changes-packages.png)
 
-verificaciòn en la interfas de github de cambios subidos 
+4. verificaciòn en la interfas de github de cambios subidos 
 
 ![alt text](imagenes/push-new-branch.png)
+
+5. creacion pull request a main 
+
+![alt text](imagenes/pullrequest-main.png)
+
+6. prueba conexiòn server 
+
+![alt text](imagenes/server-connection.png)
+
+7. visualizaciòn formulario localhost
+
+![alt text](imagenes/formulario.png)
