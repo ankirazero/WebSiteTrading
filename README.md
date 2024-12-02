@@ -38,3 +38,26 @@ pasos seguidos
     wave
 
     ![alt text](imagenes/image-5.png)
+
+
+TRABAJO 2 
+
+adicion nueva rama para cambios nodejs y express
+
+![alt text](imagenes/add-new-branch.png)
+
+inicializar nodejs 
+
+npm init -y
+
+instalar express 
+
+npm install express
+
+cambios para adicion de sevidor nodejs y express 
+
+![alt text](imagenes/changes-nosejs-express.png)
+
+verificaciòn en la interfas de github de cambios subidos 
+
+![alt text](imagenes/push-new-branch.png)
