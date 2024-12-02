@@ -1,26 +1,41 @@
-// server.js
 const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser'); // Necesario para procesar los datos del formulario
 const app = express();
 const port = 3000;
 
-// Middleware para parsear el body de las peticiones POST
-app.use(express.json());
-app.use(express.static('public'));
+// Middleware para poder procesar datos JSON enviados en el formulario
+app.use(bodyParser.json());
 
-// Endpoint para recibir el formulario de contacto
+// Servir archivos estáticos (CSS, JS, imágenes, HTML)
+app.use(express.static(path.join(__dirname, '')));
+
+// Ruta para la página principal (index.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Ruta para la página de contacto (contacto.html)
+app.get('/contacto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contacto.html'));
+});
+
+// Ruta para recibir los datos del formulario de contacto
 app.post('/api/contact', (req, res) => {
   const { name, email, phone, message } = req.body;
-  // Aquí podrías guardar los datos en una base de datos o enviar un correo
+
+  if (!name || !email || !phone || !message) {
+    return res.status(400).json({ message: 'Todos los campos son requeridos' });
+  }
+
+  // Aquí podrías hacer lo que necesites con los datos (guardar en base de datos, enviar email, etc.)
   console.log('Datos recibidos:', { name, email, phone, message });
 
-  res.json({ message: 'Formulario enviado con éxito' });
+  // Responder con un mensaje de éxito
+  res.status(200).json({ message: 'Formulario enviado con éxito' });
 });
 
-// Servir el sitio web estático
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
+// Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`Servidor corriendo en http://localhost:${port}`);
 });
