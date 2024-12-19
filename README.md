@@ -87,7 +87,7 @@ npm install express
 
 10. importar proyecto y deploy
 
-![alt text](imagenes/configure-vercel.png)
+![alt text](imagenes/configure-verce.png)
 
 11. despliegue completado y url de despliegue https://web-site-trading-v8pg.vercel.app/
 
