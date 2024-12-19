@@ -1,10 +1,24 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const message = document.getElementById('message').value;
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const feedbackElement = document.getElementById('form-feedback');
+
+  // Validación básica en el frontend
+  if (!name || !email || !phone || !message) {
+    feedbackElement.innerHTML = 'Todos los campos son obligatorios.';
+    feedbackElement.style.color = 'red';
+    return;
+  }
+
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    feedbackElement.innerHTML = 'Por favor, ingresa un correo electrónico válido.';
+    feedbackElement.style.color = 'red';
+    return;
+  }
 
   fetch('/api/contact', {
     method: 'POST',
@@ -13,13 +27,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     },
     body: JSON.stringify({ name, email, phone, message }),
   })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
-      document.getElementById('form-feedback').innerHTML = data.message;
-      document.getElementById('form-feedback').style.color = 'green';
+      feedbackElement.innerHTML = data.message;
+      feedbackElement.style.color = 'green';
+
+      // Restablecer el formulario
+      document.getElementById('contact-form').reset();
     })
     .catch(error => {
-      document.getElementById('form-feedback').innerHTML = 'Error al enviar el formulario';
-      document.getElementById('form-feedback').style.color = 'red';
+      feedbackElement.innerHTML =
+        'Hubo un error al enviar el formulario. Inténtalo de nuevo más tarde.';
+      feedbackElement.style.color = 'red';
+      console.error('Error:', error);
     });
 });
