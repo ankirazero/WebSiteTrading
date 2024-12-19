@@ -69,28 +69,72 @@ video {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#home {
+#home, #education, #market, #contact {
     text-align: center;
     padding: 2rem 0;
     background-color: #f9f9f9;
 }
 
-#education {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+/* Estilo para el formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#market {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-#contact {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+form input, 
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
 }
 
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
 
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Feedback del formulario */
+#form-feedback {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Feedback de éxito */
+#form-feedback.success {
+    color: green;
+}
+
+/* Feedback de error */
+#form-feedback.error {
+    color: red;
+}

@@ -24,30 +24,50 @@
             <p>Obtén información en tiempo real sobre el mercado financiero.</p>
         </section>
         <section id="market">
-            <section id="market">
-                <h2>Datos del Mercado</h2>
-                <p>Consulta gráficos interactivos y análisis en video para entender mejor las tendencias del mercado.</p>
-                <img src="imagenes/stock-chart.jpg" alt="Gráfico de acciones mostrando tendencias del mercado" width="600" height="400">
-            </section>            
+            <h2>Datos del Mercado</h2>
+            <p>Consulta gráficos interactivos y análisis en video para entender mejor las tendencias del mercado.</p>
+            <img src="imagenes/stock-chart.jpg" alt="Gráfico de acciones mostrando tendencias del mercado" width="600" height="400">
+            
+            <!-- Contenedor para datos dinámicos -->
+            <h3>Información en tiempo real:</h3>
+            <ul id="market-data"></ul>
         </section>
         <section id="education">
             <h2>Recursos Educativos</h2>
             <p>Aprende sobre análisis técnico y fundamental.</p>
-                <video controls width="600">
+            <video controls width="600">
                 <source src="videos/market-analysis.mp4" type="video/mp4">
                 Tu navegador no soporta video. Por favor, actualiza tu navegador o intenta descargarlo.
-                </video>
+            </video>
         </section>
         <section id="contact">
             <h2>Contacto</h2>
             <p>Si deseas ponerte en contacto, puedes hacerlo a través del siguiente formulario.</p>
             
-            <!-- Enlace a la página de contacto -->
-            <a href="contacto.html">Ir al formulario de contacto</a>
-          </section>
+            <!-- Formulario directo -->
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            
+            <!-- Feedback del formulario -->
+            <p id="form-feedback" aria-live="polite"></p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 TradingSite</p>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
