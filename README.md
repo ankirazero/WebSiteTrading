@@ -76,3 +76,19 @@ npm install express
 7. visualizaciòn formulario localhost
 
 ![alt text](imagenes/formulario.png)
+
+8. subida de nuevo codigo y actualizaciones de pagina
+
+![alt text](imagenes/pullrequest.png)
+
+9. ir a vercel y configurar proyecto de github
+
+![alt text](imagenes/vercel.png)
+
+10. importar proyecto y deploy
+
+![alt text](imagenes/configure-vercel.png)
+
+11. despliegue completado y url de despliegue https://web-site-trading-v8pg.vercel.app/
+
+![alt text](imagenes/despliegue-vercel.png)
